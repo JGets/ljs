@@ -17,9 +17,13 @@ This is still **EXPERIMENTAL** and not recommended for production use. Use at yo
 
 ## Caveat
 Unfortunately, event support for the `<link>` tag is severely lacking, and event support for the `<script>` tag is somewhat hit-and-miss, in most older (and some current) browsers. As such, callbacks, and URL fallbacks, for `ljs` may not work in these browsers. Async load functionality should be unaffected, but it will likely only attempt the first given url, and fail silently if that resource cannot be loaded.  
+
+Therefore, it is recomended that no critical functionality be placed in any callback functions passed to `ljs`.
+
 For more information on browser event support for `<link>` and `<script>` tags: [https://pie.gd/test/script-link-events/](https://pie.gd/test/script-link-events/)
 
 ## Usage
+Remember to add `<noscript>`s to the `<head>` of the document with any scripts or stylesheets that will be lazy-loaded with `ljs`, for graceful degradation when the client browser has no javascript support.
 
 ### Scripts
 `ljs.script(url, success, fail);`  
