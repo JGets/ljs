@@ -2,10 +2,10 @@
 
 A small, dependency free, script to help in lazy/async loading of resources on a webpage.
 
-`l.js` is designed to be small, simple, and to the point. It's meant to make lazy-loading reasources easy, with support for unreachable resource fallbacks.
+`l.js` is designed to be small, simple, and to the point. It's meant to make lazy-loading resources easy, with support for unreachable resource fallbacks.
 
 ## __*NOTE*__
-This is still **EXPERIMENTAL** and not reccommended for production use. Use at your own risk.
+This is still **EXPERIMENTAL** and not recommended for production use. Use at your own risk.
 
 ## The Script
 ```html
@@ -16,7 +16,7 @@ This is still **EXPERIMENTAL** and not reccommended for production use. Use at y
 ```
 
 ## Caveat
-Unfortunately, event support for the `<link>` tag is severly lacking, and event support for the `<script>` tag is somewhat hit-and-miss, in most older (and some current) browsers. As such, callbacks, and url fallbacks, for `ljs` may not work in these browsers. Async load funcationality should be unaffected, but it will likely only attempt the first given url, and fail silently if that resource cannot be loaded.  
+Unfortunately, event support for the `<link>` tag is severely lacking, and event support for the `<script>` tag is somewhat hit-and-miss, in most older (and some current) browsers. As such, callbacks, and URL fallbacks, for `ljs` may not work in these browsers. Async load functionality should be unaffected, but it will likely only attempt the first given url, and fail silently if that resource cannot be loaded.  
 For more information on browser event support for `<link>` and `<script>` tags: [https://pie.gd/test/script-link-events/](https://pie.gd/test/script-link-events/)
 
 ## Usage
@@ -27,7 +27,7 @@ Use this to async load a javascript resource.
 
 | Parameters |   |
 |------------|---|
-| `url`      | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to laod a script. | 
+| `url`      | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to load a script. | 
 | `success`  | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
 | `fail`     | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
 
@@ -40,7 +40,7 @@ Use this function to async load a css stylesheet.
 
 | Parameters |   |
 |------------|---|
-| `url`      | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to laod a script. | 
+| `url`      | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to load a script. | 
 | `success`  | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
 | `fail`     | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
 
