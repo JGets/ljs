@@ -15,11 +15,39 @@ This is still **EXPERIMENTAL** and not reccommended for production use. Use at y
 </script>
 ```
 
+## Caveat
+Unfortunately, event support for the `<link>` tag is severly lacking, and event support for the `<script>` tag is somewhat hit-and-miss, in most older (and some current) browsers. As such, callbacks, and url fallbacks, for `ljs` may not work in these browsers. Async load funcationality should be unaffected, but it will likely only attempt the first given url, and fail silently if that resource cannot be loaded.  
+For more information on browser event support for `<link>` and `<script>` tags: [https://pie.gd/test/script-link-events/](https://pie.gd/test/script-link-events/)
+
 ## Usage
 
-<!-- `ljs.script(url, success, fail);`  
-Use this to async load a javascript resource. -->
+### Scripts
+`ljs.script(url, success, fail);`  
+Use this to async load a javascript resource.   
 
-Documentation to come.
+| Parameters |   |
+|------------|---|
+| `url`      | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to laod a script. | 
+| `success`  | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
+| `fail`     | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
 
+
+-----------
+
+### Stylesheets
+`ljs.style(url, success, fail);`  
+Use this function to async load a css stylesheet.
+
+| Parameters |   |
+|------------|---|
+| `url`      | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to laod a script. | 
+| `success`  | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
+| `fail`     | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
+
+
+-----------
+
+### Custom Non-Render-Blocking callbacks
+`ljs.nrb(callback);`  
+Use this function to make trigger custom callback functions, such that they don't cause a render block.
 
