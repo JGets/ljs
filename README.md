@@ -26,27 +26,27 @@ For more information on browser event support for `<link>` and `<script>` tags: 
 Remember to add `<noscript>`s to the `<head>` of the document with any scripts or stylesheets that will be lazy-loaded with `ljs`, for graceful degradation when the client browser has no javascript support.
 
 ### Scripts
-`ljs.script(url, success, fail);`  
+`ljs.script(url [, success [, fail]] );`  
 Use this to async load a javascript resource.   
 
 | Parameters |   |
 |------------|---|
-| `url`      | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to load a script. | 
-| `success`  | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
-| `fail`     | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
+| `url`      | **Required** | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to load a script. | 
+| `success`  | Optional | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
+| `fail`     | Optional | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
 
 
 -----------
 
 ### Stylesheets
-`ljs.style(url, success, fail);`  
+`ljs.style(url [, success [, fail]] );`  
 Use this function to async load a css stylesheet.
 
 | Parameters |   |
 |------------|---|
-| `url`      | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to load a script. | 
-| `success`  | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
-| `fail`     | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
+| `url`      | **Required** | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to load a script. | 
+| `success`  | Optional | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
+| `fail`     | Optional | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
 
 
 -----------
