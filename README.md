@@ -33,7 +33,7 @@ Use this to async load a javascript resource.
 |------------|---|---|
 | `url`      | **Required** | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to load a script. | 
 | `success`  | Optional | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
-| `fail`     | Optional | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
+| `fail`     | Optional | A callback function that will be triggered if *all* of the given URLs fail to load. It receives no parameters. |
 
 
 -----------
@@ -46,7 +46,7 @@ Use this function to async load a css stylesheet.
 |------------|---|---|
 | `url`      | **Required** | Can be either a string, or array of strings. If it is an array, `ljs` will attempt to load the first in the array, moving on to the second if it is unable to load the first, and continuing on through the array until it is successfully able to load a script. | 
 | `success`  | Optional | A callback function to be triggered on successful load of a script. The given URL string of the script that was successfully loaded will be passed as the only parameter to this function. | 
-| `fail`     | Optional | A callback function that will be triggered on failure to load *any* of the script urls given. It receives no parameters. |
+| `fail`     | Optional | A callback function that will be triggered if *all* of the given URLs fail to load. It receives no parameters. |
 
 
 -----------
